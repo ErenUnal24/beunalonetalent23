@@ -13,6 +13,49 @@
    <I18N_TPOOL>
     <item>
      <LANGUAGE>E</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Twitter Uygulaması</ENTRY>
+       <LENGTH>18</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_ID</KEY>
+       <ENTRY> Id:</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_TWEET</KEY>
+       <ENTRY> Tweet:</ENTRY>
+       <LENGTH>15</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_TW_AC</KEY>
+       <ENTRY>Ac</ENTRY>
+       <LENGTH>10</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_TW_AT</KEY>
+       <ENTRY>Gönder</ENTRY>
+       <LENGTH>14</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_TW_DEG</KEY>
+       <ENTRY>Degistir:</ENTRY>
+       <LENGTH>17</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_TW_SIL</KEY>
+       <ENTRY>Sil</ENTRY>
+       <LENGTH>11</LENGTH>
+      </item>
+     </TEXTPOOL>
     </item>
    </I18N_TPOOL>
   </asx:values>
