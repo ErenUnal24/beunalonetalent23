@@ -80,3 +80,5 @@ START-OF-SELECTION.
 
         ENDIF.
 ENDCASE.
+
+break oteunal.
