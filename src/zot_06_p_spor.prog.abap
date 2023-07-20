@@ -21,15 +21,15 @@ TYPES : BEGIN OF gty_grup,
           club_name TYPE c LENGTH 15,
         END OF gty_grup.
 
-DATA: gt_agrup TYPE TABLE OF gty_grup,
-      gt_bgrup TYPE TABLE OF gty_grup,
-      gt_cgrup TYPE TABLE OF gty_grup,
-      gt_dgrup TYPE TABLE OF gty_grup,
+DATA: gt_grup1 TYPE TABLE OF gty_grup,
+      gt_grup2 TYPE TABLE OF gty_grup,
+      gt_grup3 TYPE TABLE OF gty_grup,
+      gt_grup4 TYPE TABLE OF gty_grup,
       gt_final TYPE TABLE OF gty_grup,
       gs_final TYPE gty_grup.
 
 gt_sports = VALUE #( BASE gt_sports ( club_id   = 1
-                                      club_name = 'Liverpol'
+                                      club_name = 'Liverpool'
                                       nation    = 'EN'
                                       pot       = 1
                                       )
@@ -74,7 +74,7 @@ gt_sports = VALUE #( BASE gt_sports ( club_id   = 1
                                         pot       = 3
                                        )
                                       ( club_id   = 10
-                                        club_name = 'Galatasaray'
+                                        club_name = 'Beşiktaş'
                                         nation    = 'TR'
                                         pot       = 3
                                        )
@@ -156,8 +156,8 @@ LOOP AT gt_sports INTO DATA(ls_db).
 
     IF ls_read-nation NE ls_db-nation.
       IF ls_read-pot NE ls_db-pot.
-        if lines( gt_agrup ) < 4.
-        APPEND ls_read-club_name TO gt_agrup.
+        if lines( gt_grup1 ) < 4.
+        APPEND ls_read-club_name TO gt_grup1.
         DELETE gt_sports WHERE club_id  = ls_read-club_id.
        endif.
       ENDIF.
@@ -183,8 +183,8 @@ LOOP AT gt_sports INTO DATA(ls_db2).
     if sy-index MOD 4 = 0.
       IF ls_read2-nation NE ls_db2-nation.
         IF ls_read2-pot NE ls_db2-pot.
-          if lines( gt_bgrup ) < 4.
-          APPEND ls_read2-club_name TO gt_bgrup.
+          if lines( gt_grup2 ) < 4.
+          APPEND ls_read2-club_name TO gt_grup2.
           DELETE gt_sports WHERE club_id  = ls_read2-club_id.
           endif.
         ENDIF.
@@ -211,8 +211,8 @@ LOOP AT gt_sports INTO DATA(ls_db3).
     if sy-index MOD 4 = 0.
       IF ls_read3-nation NE ls_db3-nation.
         IF ls_read3-pot NE ls_db3-pot.
-          if lines( gt_cgrup ) < 4.
-          APPEND ls_read3-club_name TO gt_cgrup.
+          if lines( gt_grup3 ) < 4.
+          APPEND ls_read3-club_name TO gt_grup3.
           DELETE gt_sports WHERE club_id  = ls_read3-club_id.
           endif.
         ENDIF.
@@ -238,8 +238,8 @@ LOOP AT gt_sports INTO DATA(ls_db4).
       if sy-index MOD 4 = 0.
         IF ls_read4-nation NE ls_db4-nation.
           IF ls_read4-pot NE ls_db4-pot.
-            if lines( gt_dgrup ) < 4.
-            APPEND ls_read4-club_name TO gt_dgrup.
+            if lines( gt_grup4 ) < 4.
+            APPEND ls_read4-club_name TO gt_grup4.
             DELETE gt_sports WHERE club_id  = ls_read4-club_id.
             endif.
           ENDIF.
@@ -249,8 +249,8 @@ LOOP AT gt_sports INTO DATA(ls_db4).
 ENDLOOP.
 
 
-cl_demo_output=>write( gt_agrup ).
-cl_demo_output=>write( gt_bgrup ).
-cl_demo_output=>write( gt_cgrup ).
-cl_demo_output=>write( gt_dgrup ).
+cl_demo_output=>write( gt_grup1 ).
+cl_demo_output=>write( gt_grup2 ).
+cl_demo_output=>write( gt_grup3 ).
+cl_demo_output=>write( gt_grup4 ).
 cl_demo_output=>display(  ).
